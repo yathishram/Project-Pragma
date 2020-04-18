@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Send from "../Files/sendFiles";
 import Instructions from "../Files/instructions";
 import Receive from "../Files/recieveFiles";
+import EmailService from "../email/email";
 
 class FileActionPage extends Component {
   render() {
@@ -14,11 +15,12 @@ class FileActionPage extends Component {
               <Send />
               <Receive />
             </div>
-            <Link to="/faq">
-              <div className="col s4 push-s2">
+            <div className="col s4 push-s2">
+              <EmailService />
+              <Link to="/faq">
                 <Instructions />
-              </div>
-            </Link>
+              </Link>
+            </div>
           </div>
         </div>
       </div>
