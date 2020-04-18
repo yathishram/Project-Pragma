@@ -5,6 +5,7 @@ import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import Profile from "./profile";
 import History from "../transactions/history";
+import { selectTransactionData } from "../../selectors/transactionSelector";
 
 class Dashboard extends Component {
   render() {
@@ -29,7 +30,7 @@ class Dashboard extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    transactions: state.firestore.ordered.transactions,
+    transactions: selectTransactionData(state),
     auth: state.firebase.auth,
     profile: state.firebase.profile,
   };

@@ -10,6 +10,7 @@ import SignUp from "./components/auth/SignUp";
 import AboutPage from "./components/dashboard/About";
 import FileActionsPage from "./components/sendreceivepage/sendReceivePage";
 import Faq from "./components/dashboard/faq";
+import HistoryPage from "./components/transactions/historypage";
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
             <Route path="/signup" component={SignUp} />
             <Route path="/fun" component={FileActionsPage} />
             <Route path="/faq" component={Faq} />
+            <Route path="/history" component={HistoryPage} />
           </Switch>
         </div>
       </BrowserRouter>
