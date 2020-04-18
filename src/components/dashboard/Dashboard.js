@@ -11,6 +11,7 @@ class Dashboard extends Component {
     console.log(this.props);
     const { transactions, auth, profile } = this.props;
     //const rewards = profile.PragmaRewards
+    if (!auth.uid) return <Redirect to="/signin"></Redirect>;
     return (
       <div className="container">
         <Profile profile={profile} />

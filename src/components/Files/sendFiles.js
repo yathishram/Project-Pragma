@@ -73,7 +73,11 @@ class Send extends Component {
           (error, transactionHash) => {
             this.setState({ transactionHash: transactionHash });
             //console.log(this.state.ipfsHash, this.state.transactionHash);
-            this.props.createTransactionEntry(this.state.ipfsHash, this.state.transactionHash);
+            try {
+              this.props.createTransactionEntry(this.state.ipfsHash, this.state.transactionHash);
+            } catch (err) {
+              console.log("Couldnt update the db", err.message);
+            }
           }
         );
         //Call firebase from here.

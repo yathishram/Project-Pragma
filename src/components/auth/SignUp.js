@@ -9,17 +9,17 @@ class SignUp extends Component {
     email: "",
     password: "",
     firstName: "",
-    lastName: ""
+    lastName: "",
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.signup(this.state);
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     });
   };
   render() {
@@ -38,14 +38,6 @@ class SignUp extends Component {
           <div className="col s8">
             <form className="white" onSubmit={this.handleSubmit}>
               <div className="input-field">
-                <label htmlFor="email">Email</label>
-                <input type="email" id="email" onChange={this.handleChange} />
-              </div>
-              <div className="input-field">
-                <label htmlFor="password">Password</label>
-                <input type="password" id="password" onChange={this.handleChange} />
-              </div>
-              <div className="input-field">
                 <label htmlFor="firstName">First Name</label>
                 <input type="text" id="firstName" onChange={this.handleChange} />
               </div>
@@ -53,6 +45,15 @@ class SignUp extends Component {
                 <label htmlFor="lastName">Last Name</label>
                 <input type="text" id="lastName" onChange={this.handleChange} />
               </div>
+              <div className="input-field">
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" onChange={this.handleChange} />
+              </div>
+              <div className="input-field">
+                <label htmlFor="password">Password</label>
+                <input type="password" id="password" onChange={this.handleChange} />
+              </div>
+
               <div className="input-field">
                 <button className="btn pink z-depth-1">Register</button>
                 <div className="center red-text">{authError ? <p>{authError}</p> : null}</div>
@@ -65,16 +66,16 @@ class SignUp extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     auth: state.firebase.auth,
-    authError: state.auth.authError
+    authError: state.auth.authError,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    signup: user => dispatch(signup(user))
+    signup: (user) => dispatch(signup(user)),
   };
 };
 
