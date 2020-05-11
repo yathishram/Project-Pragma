@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { signout } from "../../actions/authActions";
 
-const SignedInLinks = props => {
+const SignedInLinks = (props) => {
   return (
-    <ul className="right">
+    <ul className="right hide-on-med-and-down">
       <li>
         <NavLink to="/fun" className="grey-text text-darken-4">
           Share
@@ -31,9 +31,9 @@ const SignedInLinks = props => {
   );
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    signout: () => dispatch(signout())
+    signout: () => dispatch(signout()),
   };
 };
 

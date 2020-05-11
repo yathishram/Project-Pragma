@@ -3,17 +3,17 @@ import Homeimage from "../../media/home.png";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 
-const Home = props => {
+const Home = (props) => {
   const { auth } = props;
   if (auth.uid) {
     return (
       <div className="container">
         <div className="section">
           <div className="row">
-            <div className="col s6">
+            <div className="col l6">
               <img src={Homeimage} alt="" style={{ height: 350, width: 450 }} />
             </div>
-            <div className="col s6">
+            <div className="col l6">
               <div className="section">
                 <h3 style={{ color: "#ff4156" }}>Start Sharing Files</h3>
                 <h5>SAFE - SECURE - FREE</h5>
@@ -31,10 +31,10 @@ const Home = props => {
       <div className="container">
         <div className="section">
           <div className="row">
-            <div className="col s6">
+            <div className="col l6">
               <img src={Homeimage} alt="" style={{ height: 350, width: 450 }} />
             </div>
-            <div className="col s6">
+            <div className="col l6">
               <div className="section">
                 <h3 style={{ color: "#ff4156" }}>SHARING FILES MADE SECURE</h3>
 
@@ -51,10 +51,10 @@ const Home = props => {
   }
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   console.log(state);
   return {
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
   };
 };
 

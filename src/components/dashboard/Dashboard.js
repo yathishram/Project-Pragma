@@ -18,7 +18,7 @@ class Dashboard extends Component {
         <Profile profile={profile} />
         <div className="section">
           <div className="row">
-            <div className="col 12">
+            <div className="col">
               <History transactions={transactions} />
             </div>
           </div>

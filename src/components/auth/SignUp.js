@@ -32,10 +32,10 @@ class SignUp extends Component {
         </h3>
         <h5 className="center-align">Register and start sharing right away</h5>
         <div className="row">
-          <div className="col s4 pull-s3">
-            <img src={SignupImage} alt="" style={{ height: 340, width: 580 }} />
+          <div className="col l6">
+            <img src={SignupImage} alt="" style={{ height: 340, width: 500 }} />
           </div>
-          <div className="col s8">
+          <div className="col l6">
             <form className="white" onSubmit={this.handleSubmit}>
               <div className="input-field">
                 <label htmlFor="firstName">First Name</label>

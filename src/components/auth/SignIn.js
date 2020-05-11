@@ -8,17 +8,17 @@ import LoginLogo from "../../media/login.svg";
 class SignIn extends Component {
   state = {
     email: "",
-    password: ""
+    password: "",
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
     this.props.signin(this.state);
   };
 
-  handleChange = e => {
+  handleChange = (e) => {
     this.setState({
-      [e.target.id]: e.target.value
+      [e.target.id]: e.target.value,
     });
   };
 
@@ -33,10 +33,10 @@ class SignIn extends Component {
         <h5 className="center-align">Login to Continue</h5>
 
         <div className="row">
-          <div className="col s4 pull-s2">
+          <div className="col l6">
             <img alt="" src={LoginLogo} style={{ height: 340, width: 580 }} />
           </div>
-          <div className="col s8 ">
+          <div className="col l6">
             <form className="white" onSubmit={this.handleSubmit}>
               <div className="input-field">
                 <label htmlFor="email">Email</label>
@@ -58,16 +58,16 @@ class SignIn extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     authError: state.auth.authError,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    signin: creds => dispatch(signin(creds))
+    signin: (creds) => dispatch(signin(creds)),
   };
 };
 

@@ -9,8 +9,24 @@ import { selectTransactionData } from "../../selectors/transactionSelector";
 const HistoryPage = ({ transactions }) => {
   console.log(transactions);
   return (
-    <div>
-      <h4>History!</h4>
+    <div className="container" style={{ maxWidth: "100%" }}>
+      <h4>Recent Transactions</h4>
+      <div className="row">
+        <div className="col">
+          {transactions &&
+            transactions.map((transaction) => {
+              return (
+                <div className="card blue-grey darken-1">
+                  <div className="card-content white-text">
+                    <p>IPFS HASH : {transaction.ifpsHash}</p>
+                    <p>Transaction Hash: {transaction.transactionhash}</p>
+                    <p className="grey-text">{moment(transaction.createdAt.toDate()).calendar()}</p>
+                  </div>
+                </div>
+              );
+            })}
+        </div>
+      </div>
     </div>
   );
 };

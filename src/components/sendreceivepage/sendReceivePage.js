@@ -11,11 +11,11 @@ class FileActionPage extends Component {
       <div className="container">
         <div className="send section">
           <div className="row">
-            <div className="col s8 pull-s3">
+            <div className="col l6">
               <Send />
               <Receive />
             </div>
-            <div className="col s4 push-s2">
+            <div className="col l6">
               <EmailService />
               <Link to="/faq">
                 <Instructions />
