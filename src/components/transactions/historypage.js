@@ -7,7 +7,6 @@ import { compose } from "redux";
 import { selectTransactionData } from "../../selectors/transactionSelector";
 
 const HistoryPage = ({ transactions }) => {
-  console.log(transactions);
   return (
     <div className="container" style={{ maxWidth: "100%" }}>
       <h4>Recent Transactions</h4>
