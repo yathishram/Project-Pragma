@@ -9,7 +9,6 @@ import { selectTransactionData } from "../../selectors/transactionSelector";
 
 class Dashboard extends Component {
   render() {
-    console.log(this.props);
     const { transactions, auth, profile } = this.props;
     //const rewards = profile.PragmaRewards
     if (!auth.uid) return <Redirect to="/signin"></Redirect>;

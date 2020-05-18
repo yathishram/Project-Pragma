@@ -31,24 +31,6 @@ class Send extends Component {
     });
   };
 
-  // onClick = async () => {
-  //   try {
-  //     this.setState({
-  //       blockNumber: "Waiting",
-  //     });
-  //     this.setState({ gasUsed: "Waiting" });
-
-  //     await web3.eth.getTransactionReceipt(this.setState.transactionHash, (err, txReceipt) => {
-  //       console.log(err, txReceipt);
-  //       this.setState({
-  //         txReceipt: txReceipt,
-  //       });
-  //     });
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
   onSubmit = async (event) => {
     event.preventDefault();
     //Clear the data
@@ -62,7 +44,6 @@ class Send extends Component {
     this.setState({ ethAddress });
     try {
       await ipfs.add(this.state.buffer, (err, ipfsHash) => {
-        //console.log(ipfsHash);
         this.setState({
           ipfsHash: ipfsHash[0].hash,
         });
@@ -72,7 +53,6 @@ class Send extends Component {
           },
           (error, transactionHash) => {
             this.setState({ transactionHash: transactionHash });
-            //console.log(this.state.ipfsHash, this.state.transactionHash);
             try {
               this.props.createTransactionEntry(this.state.ipfsHash, this.state.transactionHash);
             } catch (err) {

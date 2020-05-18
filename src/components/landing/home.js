@@ -17,7 +17,7 @@ const Home = (props) => {
               <div className="section">
                 <h3 style={{ color: "#ff4156" }}>Start Sharing Files</h3>
                 <h5>SAFE - SECURE - FREE</h5>
-                <NavLink to="/dashboard" className="btn pink">
+                <NavLink to="/fun" className="btn pink">
                   SHARE NOW!
                 </NavLink>
               </div>
@@ -52,7 +52,6 @@ const Home = (props) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     auth: state.firebase.auth,
   };

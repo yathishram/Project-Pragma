@@ -20,7 +20,6 @@ class EmailService extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault();
-    console.log(this.state);
     axios({
       method: "POST",
       url: "http://localhost:5000/send",

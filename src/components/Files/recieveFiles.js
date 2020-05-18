@@ -20,9 +20,7 @@ class Receive extends Component {
 
   onSubmit = async (event) => {
     event.preventDefault();
-    console.log(this.state.hash);
     let hash = this.state.hash;
-    //console.log(`https://ipfs.infura.io:5001/api/v0/cat?arg=${hash}`);
     window.open(`https://ipfs.infura.io:5001/api/v0/cat?arg=${hash}`, "_blank");
   };
 

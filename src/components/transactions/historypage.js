@@ -15,7 +15,7 @@ const HistoryPage = ({ transactions }) => {
           {transactions &&
             transactions.map((transaction) => {
               return (
-                <div className="card blue-grey darken-1">
+                <div className="card blue-grey darken-1" key={transaction.id}>
                   <div className="card-content white-text">
                     <p>IPFS HASH : {transaction.ifpsHash}</p>
                     <p>Transaction Hash: {transaction.transactionhash}</p>
